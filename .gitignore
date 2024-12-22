@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Angular build output
+frontE/dist/
+frontE/.angular/
+
+# NestJS build output
+backE/dist/
+
+# Environment files
+frontE/.env
+backE/.env
+
+# IDE files
+.vscode/
+.idea/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript cache
+*.tsbuildinfo
