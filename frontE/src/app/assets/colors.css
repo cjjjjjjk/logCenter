@@ -1,0 +1,12 @@
+/* Colors */
+
+:root {
+    /* Main colors */
+    --color-main-1st: rgb(39, 40, 41);
+    --color-main-2nd: rgb(97, 103, 122);
+    --color-main-3rd: rgb(216, 217, 218);
+    --color-main-4th: rgb(255, 246, 224);
+
+    /* Box shadow */
+    --color-box-shadow: rgba(97, 103, 122, 1);
+}

@@ -1,0 +1,14 @@
+/* Colors */
+@import '../../assets/colors.css';
+
+
+#main-header {
+    height: 2rem;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 1px 1px rgba(97, 103, 122, 0.2);
+}
