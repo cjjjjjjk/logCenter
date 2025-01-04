@@ -1,6 +1,5 @@
 /* Colors */
-@import '../../assets/colors.css';
-
+@import url('../../assets/container.css');
 
 #main-header {
     height: 2rem;
@@ -8,7 +7,12 @@
 
     position: fixed;
     top: 0;
-    left: 0;
+    z-index: 50;
 
-    box-shadow: 0 1px 1px rgba(97, 103, 122, 0.2);
+    background-color: white;
+    box-shadow: 0 1px 1px var(--color-box-shadow);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
