@@ -8,6 +8,12 @@
 
 
 /* Responsive */
+@media screen and (max-width: 1440px) {
+    .container-elements {
+        padding: 0 20vw;
+    }
+}
+
 @media screen and (max-width:1024px) {
     .container-elements {
         padding: 0 15vw;

@@ -6,12 +6,17 @@
     --color-main-2nd: rgb(97, 103, 122);
     --color-main-3rd: rgb(216, 217, 218);
     --color-main-4th: rgb(255, 246, 224);
+    /* Background */
+    --color-background-lightgray: rgba(248, 250, 252, 0.8);
 
     /* Box shadow */
     --color-box-shadow: rgba(97, 103, 122, 0.2);
 
     /* Text */
     --color-text-warning: rgb(198, 35, 0);
+
+    /* logo */
+    --color-logo-red: #800000;
 }
 
 * {

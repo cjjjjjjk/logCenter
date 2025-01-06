@@ -10,7 +10,7 @@ div {
 }
 
 span {
-    color: #800000;
+    color: var(--color-logo-red);
     font-size: x-large;
     font-weight: bolder;
 
