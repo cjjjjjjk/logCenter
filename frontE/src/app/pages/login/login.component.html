@@ -5,34 +5,80 @@
     </div>
     <div id="form-container" class="page__element">
         <!-- Login form -->
-        <div id="form-login" class="form">
+        <form id="form-login" class="form" [formGroup]="loginForm" *ngIf="currentForm === 'login'">
             <div class="form__welcome">
-                login to&nbsp;<app-logo></app-logo>
+                <div class="form__welcome__logo">
+                    login to&nbsp;<app-logo></app-logo>
+                </div>
+                <p class="form__welcome__des">welcome back</p>
             </div>
             <div class="form__input">
                 <label class="form__input__label" for="">» username</label>
-                <input class="form__input__input" type="text">
-                <span class="form__input__warning">» warning !</span>
+                <input class="form__input__input" type="text" formControlName="username">
+                <span class="form__input__warning">
+                    <p
+                        *ngIf="loginForm.controls['username'].touched && loginForm.controls['username'].errors?.['required']">
+                        » can not be empty !</p>
+                    <p *ngIf="loginForm.controls['username'].errors?.['maxlength']">» too long !</p>
+                </span>
             </div>
             <div class="form__input">
                 <label class="form__input__label" for="">» password</label>
-                <input class="form__input__input" type="text">
-                <span class="form__input__warning">» warning !</span>
+                <input class="form__input__input" type="password" formControlName="password">
+                <span class="form__input__warning">
+                    <p *ngIf="loginForm.controls['password'].errors?.['minlength']">» too short !</p>
+                </span>
             </div>
             <hr style="border: 1px solid whitesmoke; width: 100%;">
 
-            <button class="form__button">Go</button>
+            <button class="form__button" type="submit" onclick="loginSubmit()">Go</button>
 
-            <div class="form__option">new to logCenter?&nbsp; <a href="">sign up</a></div>
-
-        </div>
+            <div class="form__option">new to logCenter?&nbsp;
+                <a href="#" (click)="changeForm('register')">sign up</a>
+            </div>
+        </form>
         <!--  Register form-->
-        <div id="form-register" class="form hidden">
+        <form id="form-register" class="form" *ngIf="currentForm === 'register'" [formGroup]="registerForm">
+            <div class="form__welcome">
+                <div class="form__welcome__logo">
+                    register to&nbsp;<app-logo></app-logo>
+                </div>
+                <p class="form__welcome__des">quick create new account</p>
+            </div>
+            <div class="form__input">
+                <label class="form__input__label" for="">» username</label>
+                <input class="form__input__input" type="text" formControlName="usernameRegister">
+                <span class="form__input__warning">
+                    <p
+                        *ngIf="registerForm.controls['usernameRegister'].touched && registerForm.controls['usernameRegister'].errors?.['required']">
+                        » can not be empty !</p>
+                    <p *ngIf="registerForm.controls['usernameRegister'].errors?.['maxlength']">» too long !</p>
+                </span>
+            </div>
+            <div class="form__input">
+                <label class="form__input__label" for="">» password</label>
+                <input class="form__input__input" type="password" formControlName="passwordRegister">
+                <span class="form__input__warning">
+                    <p *ngIf="registerForm.controls['passwordRegister'].errors?.['minlength']">» too short !</p>
+                </span>
+            </div>
+            <div class="form__input">
+                <label class="form__input__label" for="">» confirm password</label>
+                <input class="form__input__input" type="password" formControlName="passwordConfirm">
+                <span class="form__input__warning">
+                    <p *ngIf="registerForm.controls['passwordConfirm'].errors?.['minlength']">» too short !</p>
+                </span>
+            </div>
+            <hr style="border: 1px solid whitesmoke; width: 100%;">
 
-        </div>
+            <button class="form__button" type="submit" onclick="registerSubmit()">Create</button>
+            <div class="form__option">have an account?&nbsp;
+                <a href="#" (click)="changeForm('login')">login</a>
+            </div>
+        </form>
 
         <!-- Forgot password form -->
-        <div id="form-forgorpassword" class="form hidden">
+        <div id="form-forgorpassword" class="form" *ngIf="currentForm === 'forgotPassword'">
 
         </div>
 
