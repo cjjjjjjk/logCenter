@@ -8,7 +8,7 @@
     --color-main-4th: rgb(255, 246, 224);
     /* Background */
     --color-background-lightgray: rgba(248, 250, 252, 0.8);
-
+    --color-backgrounf-superlight: rgba(248, 250, 252, 0.4);
     /* Box shadow */
     --color-box-shadow: rgba(97, 103, 122, 0.2);
 

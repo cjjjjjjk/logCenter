@@ -30,7 +30,8 @@ export class LoginPageComponent {
   }
 
   // Events Handle
-  changeForm(form: string): void {
+  changeForm(e: Event, form: string): void {
+    e.preventDefault()
     this.currentForm = form;
   }
 

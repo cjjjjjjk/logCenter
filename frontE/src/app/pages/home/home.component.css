@@ -1,0 +1,33 @@
+@import url('../../assets/container.css');
+
+#home-container {
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    padding-top: 3.5rem;
+
+    z-index: 30;
+    background-color: var(--color-backgrounf-superlight);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#homepage-content {
+    flex-grow: 1;
+    height: 4000px;
+    padding: 1rem;
+
+
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+}
+
+#options-box {
+    height: 60rem;
+    max-height: 60%vh;
+
+    position: sticky;
+    top: 0;
+}

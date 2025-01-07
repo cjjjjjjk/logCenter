@@ -34,7 +34,7 @@
             <button class="form__button" type="submit" onclick="loginSubmit()">Go</button>
 
             <div class="form__option">new to logCenter?&nbsp;
-                <a href="#" (click)="changeForm('register')">sign up</a>
+                <a href="" (click)="changeForm($event, 'register')">sign up</a>
             </div>
         </form>
         <!--  Register form-->
@@ -73,7 +73,7 @@
 
             <button class="form__button" type="submit" onclick="registerSubmit()">Create</button>
             <div class="form__option">have an account?&nbsp;
-                <a href="#" (click)="changeForm('login')">login</a>
+                <a href="#" (click)="changeForm($event,'login')">login</a>
             </div>
         </form>
 

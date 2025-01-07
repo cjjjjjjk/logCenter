@@ -2,6 +2,8 @@
     width: calc(100vw - 17px);
     padding: 0 25vw;
 
+    position: relative;
+
 }
 
 
