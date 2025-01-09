@@ -10,15 +10,15 @@ logs/
 Thumbs.db
 
 # Angular build output
-frontE/dist/
-frontE/.angular/
+app/dist/
+app/.angular/
 
 # NestJS build output
 backE/dist/
 
 # Environment files
-frontE/.env
-backE/.env
+app/.env
+data/.env
 
 # IDE files
 .vscode/
