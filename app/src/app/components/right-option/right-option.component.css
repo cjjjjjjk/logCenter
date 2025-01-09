@@ -21,24 +21,20 @@
     flex-direction: column;
     align-items: start;
 
+    .container__header {
+        font-weight: bold;
+        color: var(--color-logo-red);
+    }
+
     .link-option {
         width: 100%;
         padding: 0.5rem 0;
         gap: 0.5rem;
 
         border-radius: 0 0.5rem 0.5rem 0;
-
         font-weight: bold;
-
-        transition-duration: 300ms;
-        transition-property: padding, background-color;
 
         display: flex;
-    }
-
-    .container__header {
-        font-weight: bold;
-        color: var(--color-logo-red);
     }
 
     .link-option:hover {
@@ -48,6 +44,8 @@
         border-left: solid 4px var(--color-logo-red);
         padding-left: 0.5rem;
         color: var(--color-logo-red);
+        transition-duration: 300ms;
+        transition-property: padding, background-color;
 
         svg {
             stroke: var(--color-logo-red);
@@ -61,9 +59,12 @@
     font-weight: 100;
 
     span {
-
         a {
             text-decoration: none;
+        }
+
+        a:hover {
+            font-weight: bold;
         }
     }
 

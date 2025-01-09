@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RightOptionComponent } from '../../components/right-option/right-option.component';
+
 @Component({
-  selector: 'app-profile',
+  selector: 'app-setting',
   imports: [RightOptionComponent],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  templateUrl: './setting.component.html',
+  styleUrl: './setting.component.css'
 })
-export class ProfileComponent {
+export class SettingComponent {
 
 }
