@@ -9,6 +9,10 @@ div {
     align-items: center;
 }
 
+div:hover {
+    cursor: pointer;
+}
+
 span {
     color: var(--color-logo-red);
     font-size: x-large;

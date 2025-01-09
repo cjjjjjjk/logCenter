@@ -5,6 +5,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 
 // Routes
 import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-logcenter',
   imports: [HeaderComponent, RouterModule],

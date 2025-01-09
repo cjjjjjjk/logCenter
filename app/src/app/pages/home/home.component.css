@@ -7,7 +7,7 @@
     padding-top: 3.5rem;
 
     z-index: 30;
-    background-color: var(--color-backgrounf-superlight);
+    background-color: var(--color-background-superlight);
 
     display: flex;
     flex-direction: row;
@@ -29,5 +29,5 @@
     max-height: 60%vh;
 
     position: sticky;
-    top: 0;
+    top: 3.5rem;
 }

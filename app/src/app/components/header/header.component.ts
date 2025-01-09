@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { LogoComponent } from '../logo/logo.component';
 
 @Component({
@@ -8,5 +10,12 @@ import { LogoComponent } from '../logo/logo.component';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  private router: Router;
+  constructor() {
+    this.router = new Router
+  }
 
+  navigateTo(newpage: string) {
+    this.router.navigate([`/${newpage}`]);
+  }
 }
