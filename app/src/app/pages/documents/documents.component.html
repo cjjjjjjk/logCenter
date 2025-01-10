@@ -1,5 +1,7 @@
 <div id="document-container" class="container-elements">
-    <div id="documentpage-content">This is documentpage contents</div>
+    <div id="documentpage-content">
+        <app-article-mini *ngFor="let article of articles" [data]="article"></app-article-mini>
+    </div>
     <div id="options-box">
         <app-right-option></app-right-option>
     </div>

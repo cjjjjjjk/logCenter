@@ -18,10 +18,15 @@
     flex-grow: 1;
     height: 4000px;
     padding: 1rem;
-
+    gap: 1rem;
 
     border-radius: 0.5rem;
     box-shadow: 1px 1px 2px var(--color-box-shadow);
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
 }
 
 #options-box {
