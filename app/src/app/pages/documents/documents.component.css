@@ -2,8 +2,8 @@
 
 #document-container {
     width: 100%;
-    height: auto;
     gap: 1rem;
+    height: auto;
     padding-top: 3.5rem;
 
     z-index: 30;
@@ -12,11 +12,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
 
 #documentpage-content {
     flex-grow: 1;
-    height: 4000px;
     padding: 1rem;
     gap: 1rem;
 
@@ -26,7 +26,6 @@
 
     display: flex;
     flex-direction: column;
-
 }
 
 #options-box {

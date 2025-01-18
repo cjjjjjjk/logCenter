@@ -1,12 +1,9 @@
 .container-elements {
     width: calc(100vw - 17px);
     padding: 0 25vw;
-
     position: relative;
-
+    height: auto;
 }
-
-
 
 
 /* Responsive */
