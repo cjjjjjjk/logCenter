@@ -5,7 +5,7 @@
 
     border-radius: 0.5rem;
     box-shadow: 1px 1px 1px var(--color-box-shadow);
-    background-color: var(--color-background-superlight);
+    background-color: var(--color-background-lightbox);
 
 
     .article__tittle {

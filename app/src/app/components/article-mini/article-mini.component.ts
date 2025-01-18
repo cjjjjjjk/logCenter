@@ -8,5 +8,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './article-mini.component.css'
 })
 export class ArticleMiniComponent {
-  @Input() data!: { title: string, author: string, description: string }
+  @Input() data!: { title: string, userId: string, body: string }
 }

@@ -1,0 +1,76 @@
+._container {
+    width: 12rem;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    border-radius: 100%;
+
+    .avatar {
+        height: 3rem;
+        aspect-ratio: 1;
+
+        border-radius: 100%;
+        background-color: var(--color-main-4th);
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90%;
+
+        background-image: url(../../assets/profile/female-1.png);
+    }
+
+    .base-infor {
+        flex-grow: 1;
+        height: 100%;
+        padding: 0.4rem 0;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .infor__name {
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .infor__short {
+            font-weight: 400;
+            line-height: 0.5rem;
+            color: var(--color-main-2nd);
+        }
+    }
+}
+
+._container:hover {
+    cursor: pointer;
+}
+
+.base-avatars {
+    display: none;
+    height: 64px;
+    aspect-ratio: 1;
+}
+
+._avatar-1 {
+    background-image: url(../../assets/profile/male-1.png);
+}
+
+._avatar-2 {
+    background-image: url(../../assets/profile/male-2.png);
+}
+
+._avatar-3 {
+    background-image: url(../../assets/profile/male-3.png);
+}
+
+._avatar-4 {
+    background-image: url(../../assets/profile/male-4.png);
+}
+
+._avatar-5 {
+    background-image: url(../../assets/profile/female-2.png);
+}
