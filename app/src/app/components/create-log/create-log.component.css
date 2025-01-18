@@ -1,0 +1,100 @@
+._container {
+    width: 100%;
+    min-height: 7rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    gap: 1rem;
+
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+    input {
+        width: 100%;
+        height: 2rem;
+
+        border: none;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border-left: solid 4px var(--color-main-2nd);
+        padding-left: 1rem;
+
+        background-color: var(--color-background-lightgray);
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+        font-weight: 600;
+        color: var(--color-main-1st);
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    ._create-btn {
+        width: 5rem;
+        height: 2rem;
+
+        border: none;
+        border-radius: 1rem;
+
+        font-weight: bold;
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition-property: color;
+        transition-duration: 0.4s;
+    }
+
+    ._create-btn:hover {
+        background-color: var(--color-logo-red);
+        color: white;
+        cursor: pointer;
+    }
+
+    ._discard-btn {
+        width: 5rem;
+        height: 2rem;
+
+        border: none;
+        border-radius: 1rem;
+
+        font-weight: bold;
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition-property: color;
+        transition-duration: 0.4s;
+    }
+
+    ._discard-btn:hover {
+        background-color: var(--color-logo-red);
+        color: white;
+        cursor: pointer;
+    }
+}
+
+._description {
+    min-height: 6rem;
+    padding: 1rem;
+
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border-left: solid 4px var(--color-main-2nd);
+
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+}
+
+._description:focus {
+    outline: none;
+}
+
+._btn-container {
+    display: flex;
+    gap: 1rem;
+}

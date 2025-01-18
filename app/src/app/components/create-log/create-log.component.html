@@ -1,0 +1,12 @@
+<div class="_container">
+    <input type="text" class="_input" placeholder="what do you think ?" (focus)="isFocusHeader = true"
+        (blur)="handleBlurHeader()" [ngModel]="postHeader" (ngModelChange)="postHeader = $event">
+    <textarea name="" id="" class=" _description" *ngIf="textAreaShowHandle()" (focus)="isFocusDescription = true"
+        (blur)="handleBlurDescription()" [ngModel]="postDescription"
+        (ngModelChange)="postDescription = $event"></textarea>
+
+    <div class="_btn-container">
+        <button class="_create-btn" (click)="createNewLog()">create</button>
+        <button class="_discard-btn" (click)="discardNewLog()">discard</button>
+    </div>
+</div>

@@ -5,6 +5,13 @@
     height: auto;
 }
 
+.container-elelments--fulwidth {
+    height: auto;
+    width: calc(100vw - 17px);
+    padding: 0 25vw;
+    position: relative;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 1440px) {
