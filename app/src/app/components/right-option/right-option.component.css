@@ -36,6 +36,8 @@
         border-radius: 0 0.5rem 0.5rem 0;
         font-weight: bold;
 
+        color: var(--color-text-unhover);
+
         display: flex;
     }
 
@@ -48,6 +50,20 @@
         color: var(--color-logo-red);
         transition-duration: 300ms;
         transition-property: padding, background-color;
+
+        svg {
+            stroke: var(--color-logo-red);
+        }
+    }
+
+    .selected-option {
+        background: linear-gradient(90deg, white, var(--color-background-superlight));
+        cursor: pointer;
+
+        border-left: solid 4px var(--color-logo-red);
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+        padding-left: 0.5rem;
+        color: var(--color-logo-red);
 
         svg {
             stroke: var(--color-logo-red);

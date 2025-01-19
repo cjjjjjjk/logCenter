@@ -15,6 +15,7 @@
 
     /* Text */
     --color-text-warning: rgb(198, 35, 0);
+    --color-text-unhover: rgb(183, 183, 183);
 
     /* logo */
     --color-logo-red: #800000;
