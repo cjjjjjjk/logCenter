@@ -42,6 +42,11 @@ export class CreateLogComponent {
         return false;
     }
 
+    btnsShowHandler(): boolean {
+        if (this.postDescription || this.postHeader) return true;
+        return false;
+    }
+
 
     createNewLog() {
         console.log("submit")

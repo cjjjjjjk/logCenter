@@ -5,8 +5,8 @@
         (blur)="handleBlurDescription()" [ngModel]="postDescription"
         (ngModelChange)="postDescription = $event"></textarea>
 
-    <div class="_btn-container">
-        <button class="_create-btn" (click)="createNewLog()">create</button>
+    <div class="_btn-container" *ngIf="btnsShowHandler()">
+        <button class=" _create-btn" (click)="createNewLog()">create</button>
         <button class="_discard-btn" (click)="discardNewLog()">discard</button>
     </div>
 </div>
