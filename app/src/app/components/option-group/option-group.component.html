@@ -1,0 +1,12 @@
+<div class="_container">
+    <div class="_header">{{optionGroupName}}</div>
+    <div class="option-group">
+        <div class="_option" *ngFor="let option of optionsList" (click)="navigateTo(option.link, option.href)">
+            <span class="_option__header">
+                {{option.name}}
+            </span>
+            <div class="_option_image" [style.backgroundImage]="'url('+option.imageUrl+')'">
+            </div>
+        </div>
+    </div>
+</div>

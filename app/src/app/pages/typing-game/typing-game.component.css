@@ -1,9 +1,8 @@
 @import url('../../assets/container.css');
 
-#games-container {
+#typinggame-container {
     width: 100%;
-    height: auto;
-    min-height: 100vh;
+    height: 100vh;
     gap: 1rem;
     padding-top: 3.5rem;
 
@@ -15,13 +14,16 @@
     justify-content: space-between;
 }
 
-#gamespage-content {
+#typinggamepage-content {
     flex-grow: 1;
     padding: 1rem;
 
-
     border-radius: 0.5rem;
     box-shadow: 1px 1px 2px var(--color-box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #options-box {
