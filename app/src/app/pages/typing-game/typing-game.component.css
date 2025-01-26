@@ -17,15 +17,17 @@
 #typinggamepage-content {
     flex-grow: 1;
     padding: 1rem;
+    gap: 1rem;
 
     border-radius: 0.5rem;
     box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
     position: relative;
+    padding-top: 20rem;
 
     .game__options {
         height: 3rem;
@@ -58,7 +60,42 @@
     }
 
     .game__main {
-        position: absolute;
-        top: 20rem;
+        min-height: 10rem;
+        background: var(--color-background-lightgray);
+        border-radius: 1rem;
+        box-shadow: 1px 1px 2px var(--color-box-shadow);
+    }
+
+    .game__bot-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+
+        button {
+            height: 3rem;
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--color-main-1st);
+            border: none;
+            border-radius: 1rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background: var(--color-main-4th);
+            color: var(--color-logo-red);
+            box-shadow: 1px 1px 2px var(--color-box-shadow);
+
+            svg {
+                stroke: var(--color-logo-red);
+            }
+        }
     }
 }

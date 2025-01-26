@@ -21,13 +21,6 @@ export class WordscontainerComponent {
   }
   // ===========================================================================
   // Chilren DOM ===============================================================
-  @ViewChild('resetbtn') resetWordBtn!: ElementRef<HTMLButtonElement>;
-
-  ngAfterViewInit(): void {
-    if (this.resetWordBtn && this.resetWordBtn.nativeElement) {
-      this.resetWordBtn.nativeElement.focus();
-    }
-  }
   // ===========================================================================
 
   private numberofWordPerLine: number = 12;
