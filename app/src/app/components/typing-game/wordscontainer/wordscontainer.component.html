@@ -1,0 +1,10 @@
+<div id="wordscontainer-box">
+    <ng-container *ngFor="let line of lineArray">
+        <span #wordline class="wordsline">
+            <ng-container *ngFor="let word of line">
+                <div>{{word}}</div>
+            </ng-container>
+        </span>
+    </ng-container>
+    <button id="reset-btn" #resetbtn (click)="resetWords()">Reset</button>
+</div>

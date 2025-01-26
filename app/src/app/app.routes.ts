@@ -20,3 +20,4 @@ export const routes: Routes = [
             import('./pages/typing-game/typing-game.component').then(m => m.TypingGameComponent),
     },
 ];
+

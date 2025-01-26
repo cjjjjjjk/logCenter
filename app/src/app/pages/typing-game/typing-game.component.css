@@ -24,12 +24,41 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-#options-box {
-    height: 60rem;
-    max-height: 60%vh;
+    position: relative;
 
-    position: sticky;
-    top: 3.5rem;
+    .game__options {
+        height: 3rem;
+        width: 30rem;
+
+        position: absolute;
+        top: 2rem;
+
+        border: solid 2px var(--color-main-1st);
+        border-radius: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        ._option {
+            font-weight: bold;
+            color: var(--color-main-2nd);
+        }
+
+        ._option:hover {
+            cursor: pointer;
+            color: var(--color-logo-red);
+        }
+    }
+
+    .game__options:hover {
+        border-color: var(--color-logo-red);
+    }
+
+    .game__main {
+        position: absolute;
+        top: 20rem;
+    }
 }
