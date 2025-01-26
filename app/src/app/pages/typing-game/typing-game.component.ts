@@ -10,13 +10,30 @@ import { WordscontainerComponent } from '../../components/typing-game/wordsconta
 export class TypingGameComponent {
   @ViewChild('wordscontainer') wordContainer!: WordscontainerComponent;
 
-  ngAfterViewInit() {
+  crrLanguage: "vn" | "en" = "vn";
 
+  ngAfterViewInit() {
+    this.crrLanguage = this.wordContainer.languageType;
+  }
+  ngAfterViewChange() {
+    console.log('Haha')
   }
 
   constructor() { }
 
+  // Game Handler =======================================================
   resetWordContainer() {
     this.wordContainer.resetWords();
   }
+  changeLanguage() {
+    if (this.crrLanguage === 'vn') {
+      this.crrLanguage = 'en';
+    } else {
+      this.crrLanguage = 'vn'
+    }
+    setTimeout(() => {
+      this.resetWordContainer()
+    }, 100)
+  }
+  // ====================================================================
 }

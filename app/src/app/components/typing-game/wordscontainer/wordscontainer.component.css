@@ -18,7 +18,8 @@
         div {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--color-main-2nd)
+            color: var(--color-main-2nd);
+            user-select: none;
         }
     }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit, ViewChild, Input } from '@angular/core';
 import SentencesData from './sentences.json'
 
 
@@ -23,12 +23,12 @@ export class WordscontainerComponent {
   // Chilren DOM ===============================================================
   // ===========================================================================
 
+  @Input() languageType: 'vn' | 'en' = 'vn';
   private numberofWordPerLine: number = 12;
 
-  languageType: 'vn' | 'en' = 'vn';
   numberofWord: number;
   wordArray: string[] = [];
-  lineArray: string[][] = [];
+  lineArray: string[][] = [[]];
 
   constructor() {
     this.wordArray = this.getRandomSentence(this.languageType);
@@ -61,6 +61,14 @@ export class WordscontainerComponent {
     this.wordArray = this.getRandomSentence(this.languageType);
     this.numberofWord = this.wordArray.length;
     this.splitSentencens(this.numberofWord);
+  }
+  // Counting number of words per line
+  setNumberOfWordsPerline(wordArray: string[]): void {
+    let countLetter = 0;
+    wordArray.forEach((word) => {
+      countLetter += word.length;
+    })
+
   }
   // ========================================================================
 }
