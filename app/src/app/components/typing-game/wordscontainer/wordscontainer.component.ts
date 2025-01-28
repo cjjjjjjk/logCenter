@@ -48,10 +48,23 @@ export class WordscontainerComponent {
   }
   // split words into lines
   splitSentencens(numberOfWords: number) {
+    const maxNumberLetterPerLine: number = 45;
+    let numberLetterPerLine: number = 0;
+    let numberLetterTotal: number = 0;
+    let lineCount: number = 0;
+    this.lineArray.push([])
+
     for (let i = 0; i < numberOfWords; i++) {
-      const lineNumber = Math.floor(i / this.numberofWordPerLine);
-      if (i % this.numberofWordPerLine === 0) this.lineArray.push([])
-      this.lineArray.at(lineNumber)?.push(this.wordArray[i])
+      numberLetterPerLine += this.wordArray[i].length;
+      numberLetterTotal += this.wordArray[i].length;
+
+      if (numberLetterPerLine > maxNumberLetterPerLine) {
+        numberLetterPerLine = 0;
+        lineCount++;
+        this.lineArray.push([])
+      }
+
+      this.lineArray.at(lineCount)?.push(this.wordArray[i])
     }
   }
   // resetWords()
