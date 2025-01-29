@@ -13,18 +13,18 @@ export class WordscontainerComponent {
   // Event Handler =============================================================
   @HostListener('document:keydown', ['$event'])
   handleKeyBoardEvent(event: KeyboardEvent): void {
-
     if (event.key === 'Tab') {
-      const btn = document.querySelector('#reset-btn') as HTMLElement;
-      btn.focus();
+
+    } else {
+      console.log(event.key)
     }
   }
   // ===========================================================================
   // Chilren DOM ===============================================================
+  @ViewChild('wordcontainerbox') wordcontainer!: ElementRef<HTMLDivElement>;
   // ===========================================================================
 
   @Input() languageType: 'vn' | 'en' = 'vn';
-  private numberofWordPerLine: number = 12;
 
   numberofWord: number;
   wordArray: string[] = [];
@@ -35,7 +35,14 @@ export class WordscontainerComponent {
     this.numberofWord = this.wordArray.length;
     this.splitSentencens(this.numberofWord);
   }
-
+  // Logic: generateID ========================================================
+  // wordID
+  generateWordID(wordIndex: number, line: number): string {
+    return `wordID_${line}_${wordIndex}`
+  }
+  generateLetterID(letterIndex: number, wordIndex: number, lineIndex: number): string {
+    return `letterID_${lineIndex}_${wordIndex}_${letterIndex}`
+  }
   // UI: Display words handler ================================================
   // get sentences from Json Data
   getRandomSentence = function (language: 'vn' | 'en'): string[] {
@@ -81,7 +88,10 @@ export class WordscontainerComponent {
     wordArray.forEach((word) => {
       countLetter += word.length;
     })
-
+  }
+  // Theme text
+  changeTheme(theme: "light" | "dark") {
+    this.wordcontainer.nativeElement.style.color = `var(--color-text-${theme})`;
   }
   // ========================================================================
 }

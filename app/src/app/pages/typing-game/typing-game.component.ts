@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { WordscontainerComponent } from '../../components/typing-game/wordscontainer/wordscontainer.component';
 
 @Component({
@@ -8,9 +8,14 @@ import { WordscontainerComponent } from '../../components/typing-game/wordsconta
   styleUrl: './typing-game.component.css'
 })
 export class TypingGameComponent {
+  // Children Element ===================================================
+  // words container element 
   @ViewChild('wordscontainer') wordContainer!: WordscontainerComponent;
+  @ViewChild('gamemain') gameMainDivElement!: ElementRef<HTMLDivElement>;
 
   crrLanguage: "vn" | "en" = "vn";
+  crrTheme: 'light' | 'dark' = 'light';
+
 
   ngAfterViewInit() {
     this.crrLanguage = this.wordContainer.languageType;
@@ -20,6 +25,7 @@ export class TypingGameComponent {
   }
 
   constructor() { }
+
 
   // Game Handler =======================================================
   resetWordContainer() {
@@ -34,6 +40,12 @@ export class TypingGameComponent {
     setTimeout(() => {
       this.resetWordContainer()
     }, 100)
+  }
+  changeTheme() {
+    this.crrTheme = this.crrTheme === 'light' ? 'dark' : 'light';
+
+    this.gameMainDivElement.nativeElement.style.background = `var(--color-bg-${this.crrTheme})`
+    this.wordContainer.changeTheme(this.crrTheme);
   }
   // ====================================================================
 }
