@@ -33,3 +33,11 @@
         }
     }
 }
+
+.word--active {
+    color: var(--color-logo-red);
+}
+
+.letter--active {
+    background-color: var(--color-main-4th);
+}

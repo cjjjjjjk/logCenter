@@ -16,7 +16,13 @@ export class WordscontainerComponent {
     if (event.key === 'Tab') {
 
     } else {
-      console.log(event.key)
+      if (event.key === ' ')
+        console.log('next word')
+      else {
+
+        this.letterCount++;
+      }
+
     }
   }
   // ===========================================================================
@@ -29,6 +35,9 @@ export class WordscontainerComponent {
   numberofWord: number;
   wordArray: string[] = [];
   lineArray: string[][] = [[]];
+
+  // Game couting
+  letterCount: number = 0;
 
   constructor() {
     this.wordArray = this.getRandomSentence(this.languageType);
