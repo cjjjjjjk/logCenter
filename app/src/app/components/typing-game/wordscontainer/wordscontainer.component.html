@@ -2,9 +2,10 @@
     <ng-container *ngFor="let line of lineArray; let lineIndex = index">
         <span #wordline class="wordsline">
             <ng-container *ngFor="let word of line; let wordIndex = index">
-                <div [attr.id]="generateWordID(wordIndex, lineIndex)">
+                <div [attr.id]="generateWordID(wordIndex, lineIndex)" #_word>
                     <ng-container *ngFor="let letter of word.split(''); let letterIndex = index">
-                        <span [attr.id]="generateLetterID(letterIndex,wordIndex, lineIndex)">{{letter}}</span>
+                        <span [attr.id]="generateLetterID(letterIndex,wordIndex, lineIndex)"
+                            class="_letter">{{letter}}</span>
                     </ng-container>
                 </div>
             </ng-container>

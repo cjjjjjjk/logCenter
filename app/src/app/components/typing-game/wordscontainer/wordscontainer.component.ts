@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit, ViewChild, Input, viewChild, viewChildren } from '@angular/core';
 import SentencesData from './sentences.json'
 
 
@@ -28,6 +28,8 @@ export class WordscontainerComponent {
   // ===========================================================================
   // Chilren DOM ===============================================================
   @ViewChild('wordcontainerbox') wordcontainer!: ElementRef<HTMLDivElement>;
+  // words
+  @ViewChildren('_word') wordsElment !: QueryList<ElementRef<HTMLDivElement>>
   // ===========================================================================
 
   @Input() languageType: 'vn' | 'en' = 'vn';
@@ -38,11 +40,17 @@ export class WordscontainerComponent {
 
   // Game couting
   letterCount: number = 0;
-
+  // life Cycle ===============================================================
   constructor() {
     this.wordArray = this.getRandomSentence(this.languageType);
     this.numberofWord = this.wordArray.length;
     this.splitSentencens(this.numberofWord);
+  }
+  ngAfterViewInit() {
+    const wordElement = this.wordsElment.toArray().at(1);
+    if (wordElement) {
+      wordElement.nativeElement.textContent = '__changed';
+    }
   }
   // Logic: generateID ========================================================
   // wordID
