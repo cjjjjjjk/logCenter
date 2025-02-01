@@ -35,9 +35,13 @@
 }
 
 .word--active {
-    color: var(--color-logo-red);
+    color: var(--color-box-shadow);
 }
 
 .letter--active {
     background-color: var(--color-main-4th);
+}
+
+.letter--wrong {
+    color: red !important;
 }

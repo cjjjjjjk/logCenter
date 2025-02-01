@@ -10,34 +10,22 @@ import SentencesData from './sentences.json'
   styleUrl: './wordscontainer.component.css'
 })
 export class WordscontainerComponent {
-  // Event Handler =============================================================
-  @HostListener('document:keydown', ['$event'])
-  handleKeyBoardEvent(event: KeyboardEvent): void {
-    if (event.key === 'Tab') {
-
-    } else {
-      if (event.key === ' ')
-        console.log('next word')
-      else {
-
-        this.letterCount++;
-      }
-
-    }
-  }
-  // ===========================================================================
   // Chilren DOM ===============================================================
   @ViewChild('wordcontainerbox') wordcontainer!: ElementRef<HTMLDivElement>;
   // words
-  @ViewChildren('_word') wordsElment !: QueryList<ElementRef<HTMLDivElement>>
+  @ViewChildren('_word') wordsElment !: QueryList<ElementRef<HTMLDivElement>>;
+  // letters
+  @ViewChildren('_letter') letterElment !: QueryList<ElementRef<HTMLSpanElement>>;
   // ===========================================================================
-
   @Input() languageType: 'vn' | 'en' = 'vn';
 
   numberofWord: number;
   wordArray: string[] = [];
   lineArray: string[][] = [[]];
 
+  // variables
+  wordCouting: number = 0;
+  crrWord: ElementRef<HTMLSpanElement> | undefined;
   // Game couting
   letterCount: number = 0;
   // life Cycle ===============================================================
@@ -47,11 +35,36 @@ export class WordscontainerComponent {
     this.splitSentencens(this.numberofWord);
   }
   ngAfterViewInit() {
-    const wordElement = this.wordsElment.toArray().at(1);
-    if (wordElement) {
-      wordElement.nativeElement.textContent = '__changed';
+    this.crrWord = this.wordsElment.toArray().at(0);
+    this.crrWord?.nativeElement.classList.add('word--active')
+  }
+  // Event Handler =============================================================
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyBoardEvent(event: KeyboardEvent): void {
+    const controlKeys = [
+      'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
+      'Backspace', 'Delete', 'Tab', 'Escape', 'Enter',
+      'Control', 'Alt', 'Shift', 'Meta'
+    ];
+    // prevent control key
+    if (controlKeys.includes(event.key)) return;
+    if (event.key === 'Tab') {
+
+    } else {
+      let crrWordElement = this.crrWord?.nativeElement;
+      this.crrWord = this.wordsElment.toArray().at(this.wordCouting);
+      if (event.key === ' ') {
+        this.wordCouting++;
+        this.crrWord = this.wordsElment.toArray().at(this.wordCouting);
+        this.crrWord?.nativeElement.classList.add('word--active')
+      } else {
+        if (crrWordElement) crrWordElement.innerText = event.key;
+        this.letterCount++;
+      }
     }
   }
+  // ===========================================================================
   // Logic: generateID ========================================================
   // wordID
   generateWordID(wordIndex: number, line: number): string {
@@ -87,7 +100,6 @@ export class WordscontainerComponent {
         lineCount++;
         this.lineArray.push([])
       }
-
       this.lineArray.at(lineCount)?.push(this.wordArray[i])
     }
   }
@@ -98,6 +110,7 @@ export class WordscontainerComponent {
     this.wordArray = this.getRandomSentence(this.languageType);
     this.numberofWord = this.wordArray.length;
     this.splitSentencens(this.numberofWord);
+    this.wordCouting = 0;
   }
   // Counting number of words per line
   setNumberOfWordsPerline(wordArray: string[]): void {
